@@ -70,13 +70,13 @@ function searchABook(){
        console.log("Publisher : ", response.data.Publisher);
      
    });
+  }
   
-  
-// .catch(function(error) {
-//   console.error(error);
-// });
+//  I_DONT_KNOW_WHAT_TO_PUT_HERE_YET.catch(function(error) {
+//    console.error(error);
+//  });
 
-// use either maxresult or pagenation to only allow 5 results to be returned 
+// use either maxresult or pagenation to only allow 5 results to be returned
   // maxResults	unsigned integer	
 
 
@@ -89,4 +89,4 @@ function searchABook(){
     // a JSON string
   }
 
-  bookRequest() 
+  bookRequest();

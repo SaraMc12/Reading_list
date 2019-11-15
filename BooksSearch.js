@@ -1,5 +1,5 @@
 // test to make sure command line is working
-console.log('hi');
+console.log('hey!');
 
 require('dotenv').config()
 var keys = require("./src/keys");

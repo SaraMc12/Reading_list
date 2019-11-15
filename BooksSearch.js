@@ -11,7 +11,8 @@ console.log("--\n", process.argv,"\n--");
 var userSearch = process.argv.splice(2).join(" ");
 // this is the query string for the api
 var queryURL;
-
+// this creats a more readable and organized way form of information by putting the data into tables inside the console
+const cTable = require('console.table');
  
 
 searchABook()
@@ -24,3 +25,33 @@ function searchABook(){
    console.log(process.env.GOOGLE_BOOKS_ID, queryURL);
 }
 
+axios.get(queryURL).then(function (response) {
+
+  var BookInfoArray=response.data.items;
+ // create a string that allows the first 5 books from api to be called  and set paramaters of what information is brought back.
+ var consoleTable=[];
+  for (let index = 0; index < 5; index++) {
+    let bookTitle = BookInfoArray[index].volumeInfo.title;
+    let bookAuthor = BookInfoArray[index].volumeInfo.authors;
+    let bookPublisher = BookInfoArray[index].volumeInfo.publisher;
+// consoleTable is created to push each api element into the table created in the console
+   consoleTable.push({
+      Title: bookTitle,
+      Author: bookAuthor,
+      Publisher: bookPublisher
+    });
+    
+  }
+  console.table(consoleTable);
+
+   //console.log(JSON.stringify(response.data, null, 2))
+    // if (err) {
+    //   return console.log('Error occurred: ' + err);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });

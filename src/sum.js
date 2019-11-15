@@ -1,34 +1,20 @@
 function sum(a, b) {
   return a + b;
 }
-// Table test to see if the data displays the correct information in the table format 
-// console.table([
-//   {
-//     Title: 'moby duck',
-//     Author: 'herman melville',
-//     Publisher: 'dunno'
-//   },
-//   {
-//     Title: 'is it just me',
-//     Author: 'miranda hart',
-//     Publisher: 'dunno'
-//   },
-//   {
-//     Title: 'old yeller',
-//     Author: 'forgot',
-//     Publisher: 'super sad publishing'
-//   },
-//   {
-//     Title: 'pride and prejiduce',
-//     Author: 'jane austin',
-//     Publisher: 'dunno'
-//   },
-//   {
-//     Title: 'is it just me',
-//     Author: 'miranda hart',
-//     Publisher: 'dunno'
-//   },
-// ]);
-  
+
+function searchABook() {
+  for (let index = 0; index < 5; index++) {
+    let bookTitle = BookInfoArray[index].volumeInfo.title;
+    let bookAuthor = BookInfoArray[index].volumeInfo.authors;
+    let bookPublisher = BookInfoArray[index].volumeInfo.publisher;
+
+    tempTable.push({
+      Title: bookTitle,
+      Author: bookAuthor,
+      Publisher: bookPublisher
+    });
+  }
+}
+// 
   module.exports = sum;
 

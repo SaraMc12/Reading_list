@@ -18,7 +18,7 @@
   "homepage": "https://github.com/SaraMc12/Reading_list#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
     "inquirer": "^6.5.0"
   },

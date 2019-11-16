@@ -49,7 +49,7 @@ function searchABook(){
   console.log("search-a-book")
   //  call on google api to display search resutls (node BookSearch.js moby dick to test)
     queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + userSearch +"&key=" + process.env.GOOGLE_BOOKS_ID;
-   console.log(process.env.GOOGLE_BOOKS_ID, queryURL);
+ 
 }
 
 axios.get(queryURL).then(function (response) {

@@ -13,9 +13,29 @@ var userSearch = process.argv.splice(2).join(" ");
 var queryURL;
 // this creats a more readable and organized way form of information by putting the data into tables inside the console
 const cTable = require('console.table');
- 
+// this is what allows me to create questions to prompt the user in the terminal like asking them to search for something.
+var inquirer = require("inquirer");
 
-searchABook()
+// Inquierer will prompt the user so they know what to do and such
+inquirer.prompt([
+
+  {
+    type: "input",
+    message: "Hi! welcome, please type in a name or genre of a book you would like to search for",
+    name: "bookname"
+  }
+])
+.then(function(inquirerResponse) {
+ 
+  if (inquirerResponse.name) {
+    searchABook()
+  }
+  else {
+    console.log("\ndoesnt seem like that book exists yet " + inquirerResponse.username + ", maybe try another one.\n");
+  }
+});
+
+// searchABook()
 
 // create a function that sends out a get request to google API and brings back desired response
 function searchABook(){

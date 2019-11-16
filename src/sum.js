@@ -8,7 +8,7 @@ function searchABook() {
     let bookAuthor = BookInfoArray[index].volumeInfo.authors;
     let bookPublisher = BookInfoArray[index].volumeInfo.publisher;
 
-    tempTable.push({
+    consoleTable.push({
       Title: bookTitle,
       Author: bookAuthor,
       Publisher: bookPublisher

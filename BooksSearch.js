@@ -1,6 +1,6 @@
 
 // test to make sure command line is working
-console.log('hey!');
+console.log('weeee!');
 // protects api key 
 require('dotenv').config()
 // allows api calls to be made 

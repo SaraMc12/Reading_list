@@ -21,8 +21,7 @@ let readingList = JSON.parse(rawdata);
 console.log(readingList);
 
 selectBook = consoleTable => {
-  inquirer
-    .prompt([
+  inquirer.prompt([
       {
         type: "list",
         message: "Which book would you like to add to your reading list?",
@@ -75,8 +74,7 @@ function searchABook() {
   queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + userSearch;
 }
 
-axios
-  .get(queryURL)
+axios.get(queryURL)
   .then(function(response) {
     const BookInfoArray = response.data.items;
     // create a string that allows the first 5 books from api to be called  and set paramaters of what information is brought back.

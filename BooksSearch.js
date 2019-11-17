@@ -16,16 +16,25 @@ const cTable = require('console.table');
 // this is what allows me to create questions to prompt the user in the terminal like asking them to search for something.
 var inquirer = require("inquirer");
 
+  
 // // Inquierer will prompt the user so they know what to do and such
+// WILL GET BACK TO THIS LATER
 // // inquirer.prompt([
-//   inquirer
-//   .prompt([
-//     // Here we create a basic text prompt.
+//    inquirer.prompt([
+// // Here we create a basic text prompt.
 //     {
 //       type: "input",
 //       message: "Hi! welcome, please type in a name or genre of a book you would like to search for",
-//       name: "bookname"
-//     },
+//       name: "bookname",
+//       validate: function(value){
+//         if(isNaN(value)){
+//             return false
+//         }else{
+//             return true
+//         }
+//     }
+// }
+// ]).then(searchABook () {      
 //    
 //   .then(function(inquirerResponse) {
 //     // If the inquirerResponse confirms, we displays the inquirerResponse's username and pokemon from the answers.
@@ -38,56 +47,9 @@ var inquirer = require("inquirer");
   //   }
   // });
 
-
- searchABook()
-
-// create a function that sends out a get request to google API and brings back desired response
-
-
-// THIS IS THE ORIGINAL
-function searchABook(){
-  console.log("search-a-book")
-  //  call on google api to display search resutls (node BookSearch.js moby dick to test)
-    queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + userSearch +"&key=" + process.env.GOOGLE_BOOKS_ID;
- 
-}
-
-axios.get(queryURL).then(function (response) {
-
-  const BookInfoArray=response.data.items;
- // create a string that allows the first 5 books from api to be called  and set paramaters of what information is brought back.
- const consoleTable=[];
-  for (let index = 0; index < 5; index++) {
-    let bookId = BookInfoArray[index].items;
-    let bookTitle = BookInfoArray[index].volumeInfo.title;
-    let bookAuthor = BookInfoArray[index].volumeInfo.authors;
-    let bookPublisher = BookInfoArray[index].volumeInfo.publisher;
-// consoleTable is created to push each api element into the table created in the console
-   consoleTable.push({
-     Item: bookId,
-      Title: bookTitle,
-      Author: bookAuthor,
-      Publisher: bookPublisher
-    });
-    
-  }
-  console.table(consoleTable);
-
-   //console.log(JSON.stringify(response.data, null, 2))
-    // if (err) {
-    //   return console.log('Error occurred: ' + err);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
- 
-// add a .then prompt to make this part of the inquirer code happen after api call
-
+function userPrompt(){
   inquirer.prompt([  
+  
     {
              type: "list",
             message: "Which book would you like to add to your reading list?",
@@ -113,4 +75,55 @@ axios.get(queryURL).then(function (response) {
          }
        });
     
-    
+  
+}
+
+ searchABook()
+
+// create a function that sends out a get request to google API and brings back desired response
+
+
+// THIS IS THE ORIGINAL
+function searchABook(){
+ 
+  //  call on google api to display search resutls (node BookSearch.js moby dick to test)
+    queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + userSearch +"&key=" + process.env.GOOGLE_BOOKS_ID;
+ 
+}
+
+axios.get(queryURL).then(function (response) {
+
+  const BookInfoArray=response.data.items;
+ // create a string that allows the first 5 books from api to be called  and set paramaters of what information is brought back.
+ const consoleTable=[];
+  for (let index = 0; index < 5; index++) {
+    let bookId = BookInfoArray[index].items;
+    let bookTitle = BookInfoArray[index].volumeInfo.title;
+    let bookAuthor = BookInfoArray[index].volumeInfo.authors;
+    let bookPublisher = BookInfoArray[index].volumeInfo.publisher;
+// consoleTable is created to push each api element into the table created in the console
+   consoleTable.push({
+     Item: bookId,
+      Title: bookTitle,
+      Author: bookAuthor,
+      Publisher: bookPublisher
+    });
+   
+  }
+  console.table(consoleTable);
+  userPrompt()
+   //console.log(JSON.stringify(response.data, null, 2))
+    // if (err) {
+    //   return console.log('Error occurred: ' + err);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+ 
+// add a .then prompt to make this part of the inquirer code happen after api call
+
+

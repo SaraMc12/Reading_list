@@ -15,7 +15,7 @@ const inquirer = require("inquirer");
 
 let rawdata = fs.readFileSync("./src/readingList.json");
 let readingList = JSON.parse(rawdata);
-console.log(readingList);
+// console.log(readingList);
 
 selectBook = consoleTable => {
   inquirer.prompt([

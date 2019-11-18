@@ -1,8 +1,13 @@
 
-require('../test/BookSelectionPrompt.js')
+require('./selectBook')
 
-describe("selectBook", () => {
-    test("it should filter by a coices array", () => {
-       let bookSelected = consoleTable[inquirerResponse.book]
-    });
-  });
+const mockFunction =jest.fn()
+
+mockFunction.mockReturnValue();
+const resultmockFunction();
+
+// describe("selectBook", () => {
+//     test("it should filter by a choices array", () => {
+    
+   
+//    }

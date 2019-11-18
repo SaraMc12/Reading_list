@@ -1,17 +1,14 @@
 
 // test to make sure command line is working
-console.log("NEW THING");
+console.log("Woodle doot");
+
+// SET UP REQUIRMENTS NEEDED
+
 const fs = require("fs");
 const axios = require("axios");
-// console.log("--\n", process.argv,"\n--");
-// creates search paramaters for user to search for a book and have it return as a string of text
-let userSearch = process.argv.splice(2).join(" ");
-// this is the query string for the api
+let userSearchParamaters = process.argv.splice(2).join(" ");
 let queryURL;
-// this creats a more readable and organized way form of information by putting the data into tables inside the console
-//
 const cTable = require("console.table");
-// this is what allows me to create questions to prompt the user in the terminal like asking them to search for something.
 const inquirer = require("inquirer");
 
 // LOAD JSON READING LIST
@@ -71,7 +68,7 @@ console.log('HERE ARE SOME NEW BOOKS FOR YOU.')
 // THIS IS THE ORIGINAL
 function searchABook() {
   //  call on google api to display search resutls (node BookSearch.js moby dick to test)
-  queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + userSearch;
+  queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + userSearchParamaters;
 }
 
 axios.get(queryURL)

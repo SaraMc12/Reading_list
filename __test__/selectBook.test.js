@@ -1,5 +1,5 @@
 
-require('./selectBook')
+const selectBook = require('./selectBook')
 
 // const mockFunction =jest.fn()
 

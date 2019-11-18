@@ -1,6 +1,6 @@
 
 // test to make sure command line is working and to remember which branch I am working on.
-console.log("Woodle doot");
+console.log("Boop dat snoot");
 
 // SET UP REQUIRMENTS NEEDED
 

@@ -1,4 +1,3 @@
-// IN THIS TEST i WOUD LIKE TO PASS A NUMBER FROM THE GIVEN 'CHOICES' ARRAY AND VALIDATE THAT THE NUMBER SELECTED COMES BACK AS CHOSEN
 
 selectBook = consoleTable => {
     inquirer.prompt([
@@ -31,3 +30,4 @@ selectBook = consoleTable => {
       });
   };
   
+  module.exports = selectBook;

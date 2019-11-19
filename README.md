@@ -4,7 +4,10 @@
 
 ### how do I use it
 
-open up your terminal start up **node BookSearch** and then type in a desired book title, topic or genre.
+You can easily clone this from the repo and test it in your favorite text editor by typing `git clone` and pasting the repo into your terminal.
+
+Once you have the repo cloned open the the right click the file `BookSearch.js ` and open it in theterminal then type 
+`node BookSearch` and then type in a desired book title, topic or genre.
 ### Ex:
 ```
 node BookSearch.js Rabbit Care
@@ -22,6 +25,9 @@ After that the user is asked to choose a book from the readling list.
 If none of the books tickle their fancy they can press Ctrl C to start over.
 
 If they do find one they just select from the array given to them and then it is saved inside their reading list.
+
+### running the tests
+a quick note about the tests, tests are still a new concept to me, In my bootcamp we learned about them briefly but there was not form of TDD in our practice, however, I have been working at trying to improv my practices to incorperate this. Currently, I am working on making a test first environment with some very simple games.
 
 
 ### Who is this app for?

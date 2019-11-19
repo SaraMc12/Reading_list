@@ -44,17 +44,6 @@ selectBook = consoleTable => {
     });
 };
 
-userPrompt = consoleTable => {
-  inquirer.prompt([
-    {
-      type: "list",
-      message: "Which book would you like to add to your reading list?",
-      choices: consoleTable,
-      name: "book"
-    }
-   
-  ]);
-};
 
 searchABook();
 

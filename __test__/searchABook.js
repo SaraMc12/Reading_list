@@ -1,2 +1,0 @@
-const selectBook = require('./selectBook')
-

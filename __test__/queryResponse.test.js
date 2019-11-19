@@ -8,5 +8,5 @@ test(" Item: bookId,Title: bookTitle,Author: bookAuthor,Publisher: bookPublisher
       done();
     }
   
-    fetchData(callback);
+     fetchData(callback);
   });

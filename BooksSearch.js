@@ -15,7 +15,7 @@ const inquirer = require("inquirer");
 
 let rawdata = fs.readFileSync("./src/readingList.json");
 let readingList = JSON.parse(rawdata);
-// console.log(readingList);
+
 
 selectBook = consoleTable => {
   inquirer.prompt([
@@ -25,14 +25,14 @@ selectBook = consoleTable => {
         choices: [1, 2, 3, 4, 5],
         name: "book"
       }
-      // Here we ask the user to confirm.
+      
     ])
-    .then(function(inquirerResponse) {
-      if (inquirerResponse.book) {
-        console.log("\nAwesome choice!" + inquirerResponse.book);
+    .then(function(selectionConfirmation) {
+      if (selectionConfirmation.book) {
+        console.log("\nAwesome choice!" + selectionConfirmation.book);
          console.log("has now been added to your reading list\n");
         // //  add book selected to reading list
-        let bookSelected = consoleTable[inquirerResponse.book];
+        let bookSelected = consoleTable[selectionConfirmation.book];
         readingList.push(bookSelected);
         console.log(readingList);
 

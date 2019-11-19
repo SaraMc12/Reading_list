@@ -27,7 +27,9 @@ If none of the books tickle their fancy they can press Ctrl C to start over.
 If they do find one they just select from the array given to them and then it is saved inside their reading list.
 
 ### running the tests
-a quick note about the tests, tests are still a new concept to me, In my bootcamp we learned about them briefly but there was not form of TDD in our practice, however, I have been working at trying to improv my practices to incorperate this. Currently, I am working on making a test first environment with some very simple games.
+A quick note about my tests, there are still some failing ones inside my repo, I left them in becasue this is still a new concept to me and I am hoping to gain more knowledge of how to write good tests. In my bootcamp we learned about them briefly but, there was no form of TDD in our practice. However, I have been working at trying to improv my practices to incorperate this. Currently, I am working on making a test first environment to build a simple game. For now, I tried to incoperate some form of tests to better understand how TDD can be applied in apps with dependenices and async functions, but it is still a work in progress.
+### To run the tests go to the terminal and type 
+`npm run test`
 
 
 ### Who is this app for?
@@ -45,6 +47,8 @@ This app was created for the busy coder who loves to read. Now they can simply s
 * I orignally adding a .env file, only to realize after looking again at the documentation and the instructions of the code challenge that it would be okay to use the public api and not need to hide a key. 
 
 * I added inquirer as a way to add to the UX as it just seems nicer to be kindly prompted within the app as appose to go to the readme file to figure out how to do everything
+
+* I spent some extra time reading documentation and trying to apply tests since I want to apply best practices to my code. I was able to write working tests when I broke the code into smaller functions but, then I was faced with the dilema of my readinglist not saving properly. In the end I chose to go back to my async code to present a working prduct and hope that next round I can do figure out the solution that was holding me back this round.
 
 ### What is next
 
@@ -71,7 +75,7 @@ This app was created for the busy coder who loves to read. Now they can simply s
 
 * [axios](https://www.npmjs.com/package/axios). Thank you so much for transforming my book requests and responses into data , you're the backbone of this app my friend!
 
-* [Jest](https://jestjs.io/). At first I was like "what is the deal with this clown?" {dad joke intended} but, after learning how to work together I can truly apprechate all that you do for this code, so thank you and sorry for the rocky start.
+* [Jest](https://jestjs.io/). At first I was like "what is the deal with this clown?" {dad joke intended} that being said, I can truly apprechate all that you do for code, and I hope we can keep working together.
 
 
 

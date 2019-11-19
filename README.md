@@ -6,7 +6,7 @@
 
 You can easily clone this from the repo and test it in your favorite text editor by typing `git clone` and pasting the repo into your terminal.
 
-Once you have the repo cloned open the the right click the file `BookSearch.js ` and open it in theterminal then type 
+Once you have the repo cloned open the right click the file `BookSearch.js ` and open it in theterminal then type 
 `node BookSearch` and then type in a desired book title, topic or genre.
 ### Ex:
 ```

@@ -28,7 +28,7 @@ selectBook = consoleTable => {
         console.log("\nAwesome choice!" + selectionConfirmation.book);
          console.log("has now been added to your reading list\n");
       
-        let bookSelected = consoleTable[selectionConfirmation.book];
+        let bookSelected = consoleTable[selectionConfirmation.book -1];
         readingList.push(bookSelected);
         console.log(readingList);
 

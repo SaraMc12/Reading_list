@@ -1,5 +1,5 @@
 // SET UP REQUIRMENTS NEEDED
-
+console.log(hi);
 const fs = require("fs");
 const axios = require("axios");
 let userSearchParamaters = process.argv.splice(2).join(" ");
@@ -69,7 +69,7 @@ axios
   .finally(function() {});
 
 const top5Results = BookInfoArray => {
-  console.log(BookInfoArray)
+
   const consoleTable = [];
   const InfoArrayLength = BookInfoArray.length;
   let minIndex = 0;
@@ -91,7 +91,7 @@ const top5Results = BookInfoArray => {
       Publisher: bookPublisher
     });
   }
-  console.log(consoleTable)
+ 
   return consoleTable;
 };
 

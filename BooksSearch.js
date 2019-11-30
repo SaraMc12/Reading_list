@@ -1,5 +1,5 @@
 // SET UP REQUIRMENTS NEEDED
-console.log(hi);
+
 const fs = require("fs");
 const axios = require("axios");
 let userSearchParamaters = process.argv.splice(2).join(" ");
@@ -25,6 +25,8 @@ const selectBook = consoleTable => {
     ])
     .then(confirmBook);
 };
+
+
 
 const confirmBook = selectionConfirmation => {
   if (selectionConfirmation.book) {
@@ -53,20 +55,26 @@ const getAPICall = userSearchParamaters => {
   return queryURL;
 };
 
-axios
-  .get(getAPICall(userSearchParamaters))
-  .then(function(response) {
-    const BookInfoArray = response.data.items;
-    const consoleTable = top5Results(BookInfoArray);
+const callAPI = () => {
+  axios
+    .get(getAPICall(userSearchParamaters))
+    .then(APISuccsessHandler, ApiErrorHandler)
+  };
 
-    console.table(consoleTable);
-    bookChoices = consoleTable;
-    selectBook(consoleTable);
-  })
-  .catch(function(error) {
-    console.log(error);
-  })
-  .finally(function() {});
+  const APISuccsessHandler =(response)=>{
+    const BookInfoArray = response.data.items;
+      const consoleTable = top5Results(BookInfoArray);
+
+      console.table(consoleTable);
+      bookChoices = consoleTable;
+      selectBook(consoleTable);
+  }
+
+  const ApiErrorHandler = (error) =>{
+    console.log('error, please try again');
+  }
+
+callAPI();
 
 const top5Results = BookInfoArray => {
 

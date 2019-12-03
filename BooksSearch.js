@@ -44,8 +44,7 @@ const saveBookToJson = bookSelected => {
   console.log(readingList);
   try {
     fs.writeFileSync("./src/readingList.json", JSON.stringify(readingList));
-    console.log("\nAwesome choice!" + bookSelected.Title);
-    console.log("has now been added to your reading list\n");
+    console.log("\nAwesome choice! " + bookSelected.Title + " has now been added to your reading list\n");
   } catch (err) {
     console.error(err);
   }
@@ -78,7 +77,7 @@ const APISuccsessHandler = response => {
 };
 
 const ApiErrorHandler = error => {
-  console.log("error, please try again");
+  console.log("error, please type in the name, genre or topic of a book");
 };
 
 callAPI();

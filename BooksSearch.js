@@ -13,7 +13,7 @@ let rawdata = fs.readFileSync("./src/readingList.json");
 let readingList = JSON.parse(rawdata);
 let bookChoices;
 
-const selectBook = consoleTable => {
+const selectABookPrompt = consoleTable => {
   inquirer
     .prompt([
       {
@@ -23,12 +23,14 @@ const selectBook = consoleTable => {
         name: "book"
       }
     ])
-    .then(confirmBook);
+    .then(confirmUserChoice);
 };
 
-
-
-const confirmBook = selectionConfirmation => {
+/**
+ *
+ * @param {*} selectionConfirmation
+ */
+const confirmUserChoice = selectionConfirmation => {
   if (selectionConfirmation.book) {
     console.log(selectionConfirmation.book);
     const bookSelected = bookChoices[selectionConfirmation.book - 1];
@@ -49,6 +51,11 @@ const saveBookToJson = bookSelected => {
   }
 };
 
+/**
+ *
+ * @param {*} userSearchParamaters
+ *
+ */
 const getAPICall = userSearchParamaters => {
   queryURL =
     "https://www.googleapis.com/books/v1/volumes?q=" + userSearchParamaters;
@@ -58,31 +65,30 @@ const getAPICall = userSearchParamaters => {
 const callAPI = () => {
   axios
     .get(getAPICall(userSearchParamaters))
-    .then(APISuccsessHandler, ApiErrorHandler)
-  };
+    .then(APISuccsessHandler, ApiErrorHandler);
+};
 
-  const APISuccsessHandler =(response)=>{
-    const BookInfoArray = response.data.items;
-      const consoleTable = top5Results(BookInfoArray);
+const APISuccsessHandler = response => {
+  const BookInfoArray = response.data.items;
+  const consoleTable = top5Results(BookInfoArray);
 
-      console.table(consoleTable);
-      bookChoices = consoleTable;
-      selectBook(consoleTable);
-  }
+  console.table(consoleTable);
+  bookChoices = consoleTable;
+  selectABookPrompt(consoleTable);
+};
 
-  const ApiErrorHandler = (error) =>{
-    console.log('error, please try again');
-  }
+const ApiErrorHandler = error => {
+  console.log("error, please try again");
+};
 
 callAPI();
 
 const top5Results = BookInfoArray => {
-
   const consoleTable = [];
   const InfoArrayLength = BookInfoArray.length;
   let minIndex = 0;
   if (InfoArrayLength < 5) {
-    minIndex = InfoArrayLength
+    minIndex = InfoArrayLength;
   } else {
     minIndex = 5;
   }
@@ -99,9 +105,10 @@ const top5Results = BookInfoArray => {
       Publisher: bookPublisher
     });
   }
- 
+
   return consoleTable;
 };
 
+// this is for testing
 module.exports.getAPICall = getAPICall;
 module.exports.top5Results = top5Results;

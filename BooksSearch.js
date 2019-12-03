@@ -7,54 +7,8 @@ let queryURL;
 const cTable = require("console.table");
 const inquirer = require("inquirer");
 
-// LOAD JSON READING LIST
+// API CALL
 
-let rawdata = fs.readFileSync("./src/readingList.json");
-let readingList = JSON.parse(rawdata);
-let bookChoices;
-
-const selectABookPrompt = consoleTable => {
-  inquirer
-    .prompt([
-      {
-        type: "list",
-        message: "Which book would you like to add to your reading list?",
-        choices: [1, 2, 3, 4, 5],
-        name: "book"
-      }
-    ])
-    .then(confirmUserChoice);
-};
-
-/**
- *
- * @param {*} selectionConfirmation
- */
-const confirmUserChoice = selectionConfirmation => {
-  if (selectionConfirmation.book) {
-    console.log(selectionConfirmation.book);
-    const bookSelected = bookChoices[selectionConfirmation.book - 1];
-
-    saveBookToJson(bookSelected);
-  }
-};
-
-const saveBookToJson = bookSelected => {
-  readingList.push(bookSelected);
-  console.log(readingList);
-  try {
-    fs.writeFileSync("./src/readingList.json", JSON.stringify(readingList));
-    console.log("\nAwesome choice! " + bookSelected.Title + " has now been added to your reading list\n");
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-/**
- *
- * @param {*} userSearchParamaters
- *
- */
 const getAPICall = userSearchParamaters => {
   queryURL =
     "https://www.googleapis.com/books/v1/volumes?q=" + userSearchParamaters;
@@ -82,6 +36,8 @@ const ApiErrorHandler = error => {
 
 callAPI();
 
+// LOAD API RESULTS TO CONSOLETABLE
+
 const top5Results = BookInfoArray => {
   const consoleTable = [];
   const InfoArrayLength = BookInfoArray.length;
@@ -107,6 +63,52 @@ const top5Results = BookInfoArray => {
 
   return consoleTable;
 };
+
+// USER PROMPTER
+
+const selectABookPrompt = consoleTable => {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Which book would you like to add to your reading list?",
+        choices: [1, 2, 3, 4, 5],
+        name: "book"
+      }
+    ])
+    .then(confirmUserChoice);
+};
+
+const confirmUserChoice = selectionConfirmation => {
+  if (selectionConfirmation.book) {
+    console.log(selectionConfirmation.book);
+    const bookSelected = bookChoices[selectionConfirmation.book - 1];
+
+    saveBookToJson(bookSelected);
+  }
+};
+// SAVE USER CHOICE TO JSON FILE
+
+const saveBookToJson = bookSelected => {
+  readingList.push(bookSelected);
+  console.log(readingList);
+  try {
+    fs.writeFileSync("./src/readingList.json", JSON.stringify(readingList));
+    console.log(
+      "\nAwesome choice! " +
+        bookSelected.Title +
+        " has now been added to your reading list\n"
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+// LOAD JSON READING LIST TO TERMINAL
+
+let rawdata = fs.readFileSync("./src/readingList.json");
+let readingList = JSON.parse(rawdata);
+let bookChoices;
 
 // this is for testing
 module.exports.getAPICall = getAPICall;

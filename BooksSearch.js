@@ -2,12 +2,13 @@
 
 const fs = require("fs");
 const axios = require("axios");
-let userSearchParamaters = process.argv.splice(2).join(" ");
+let userSearchParamaters = process.argv.splice(3).join(" ");
 let queryURL;
 const cTable = require("console.table");
 const inquirer = require("inquirer");
 
-// API CALL
+
+ // API CALL
 
 const getAPICall = userSearchParamaters => {
   queryURL =
@@ -27,14 +28,25 @@ const APISuccsessHandler = response => {
 
   console.table(consoleTable);
   bookChoices = consoleTable;
-  selectABookPrompt(consoleTable);
+  selectABookPrompt();
 };
 
-const ApiErrorHandler = error => {
+const ApiErrorHandler = ()=> {
   console.log("error, please type in the name, genre or topic of a book");
 };
 
-callAPI();
+const containsSpecialCharacters =(str)=>{
+  var regex = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
+return regex.test(str);
+}
+
+
+if (containsSpecialCharacters(userSearchParamaters)===false){
+  callAPI();
+}else{
+  ApiErrorHandler()
+}
+
 
 // LOAD API RESULTS TO CONSOLETABLE
 
@@ -66,15 +78,15 @@ const top5Results = BookInfoArray => {
 
 // USER PROMPTER
 
-const selectABookPrompt = consoleTable => {
+const selectABookPrompt =() => {
+  console.log('what book do you want to add to the reading list')
   inquirer
     .prompt([
       {
         type: "list",
-        message: "Which book would you like to add to your reading list?",
         choices: [1, 2, 3, 4, 5],
-        name: "book"
-      }
+        name: "book",
+      },
     ])
     .then(confirmUserChoice);
 };
@@ -113,3 +125,4 @@ let bookChoices;
 // this is for testing
 module.exports.getAPICall = getAPICall;
 module.exports.top5Results = top5Results;
+module.exports.containsSpecialCharacters=containsSpecialCharacters;

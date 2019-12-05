@@ -1,5 +1,5 @@
 // SET UP REQUIRMENTS NEEDED
-
+console.log("test")
 const fs = require("fs");
 const axios = require("axios");
 let userSearchParamaters = process.argv.splice(3).join(" ");
@@ -35,18 +35,18 @@ const ApiErrorHandler = ()=> {
   console.log("error, please type in the name, genre or topic of a book");
 };
 
-const containsSpecialCharacters =(str)=>{
-  var regex = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
-return regex.test(str);
-}
+// const containsSpecialCharacters =(str)=>{
+//   var regex = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
+// return regex.test(str);
+// }
 
 
-if (containsSpecialCharacters(userSearchParamaters)===false){
-  callAPI();
-}else{
-  ApiErrorHandler()
-}
-
+// if (containsSpecialCharacters(userSearchParamaters)===false){
+//   callAPI();
+// }else{
+//   ApiErrorHandler()
+// }
+callAPI();
 
 // LOAD API RESULTS TO CONSOLETABLE
 
@@ -125,4 +125,4 @@ let bookChoices;
 // this is for testing
 module.exports.getAPICall = getAPICall;
 module.exports.top5Results = top5Results;
-module.exports.containsSpecialCharacters=containsSpecialCharacters;
+// module.exports.containsSpecialCharacters=containsSpecialCharacters;

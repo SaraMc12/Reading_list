@@ -2,7 +2,7 @@
 
  Hello, and welcome to my code. Whomever has the task of reviewing my code, thank you in advance for your helpful feedback. This experience was quiet a journey for me as I got to dip my toe into some new practices and learn a lot in the process. Testing is a new pratice for me but one I want to continue to grow in. Btw, that shirt looks great on you, is it new? Okay here we go!!!!
 
-### how do I use it
+### How do I use it
 
 You can easily clone this from the repo and test it in your favorite text editor by typing `git clone` and pasting the repo into your terminal.
 
@@ -26,8 +26,11 @@ If none of the books tickle their fancy they can press Ctrl C to start over.
 
 If they do find one they just select from the array given to them and then it is saved inside their reading list.
 
-### running the tests
-A quick note about my tests, there are still some failing ones inside my repo, I left them in becasue this is still a new concept to me and I am hoping to gain more knowledge of how to write good tests. In my bootcamp we learned about them briefly but, there was no form of TDD in our practice. However, I have been working at trying to improv my practices to incorperate this. Currently, I am working on making a test first environment to build a simple game. For now, I tried to incoperate some form of tests to better understand how TDD can be applied in apps with dependenices and async functions, but it is still a work in progress.
+### What if I want to be a troll and break the code?
+ Glad you asked! I created a new function called containsSpecialCharacters which uses regex or Regular Expression to assist in weeding out unwanted characters in the string search. As far as my research goes no book starts with *!%{#@ so, I added in a special characters array that, if entered would return a helpful error message asking the user to please enter in a genre, title, or topic of a book instead. This message will also will appear if nothing is typed. I did not include numbers becasue apon testing many books came up with in the search with numerical names and I did not want to make my search requirements too strict right now. 
+
+### Running the tests
+My tests are passing Wooohooo! I realized that my original attempt was geared more toward React components and I did not need to make so many seperate files.
 ### To run the tests go to the terminal and type 
 `npm run test`
 

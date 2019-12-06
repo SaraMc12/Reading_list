@@ -9,7 +9,7 @@ Hello again, and welcome back to my code. Thank you again for your helpful feedb
 You can easily clone this from the repo and test it in your favorite text editor by typing `git clone` and pasting the repo into your terminal.
 
 Once you have the repo cloned type in your terminal `npm install` Once that is installed right click the file `MainApp.js ` and open it in the terminal then type 
-`node MainApp.js` a desired book title, genre or topic surrounded by quotation marks (this helps creates a more efficiant search for the API).
+`node MainApp.js`  then a desired book title, genre or topic surrounded by quotation marks (this helps creates a more efficient search for the API).
 ### Ex:
 ```
 node BookSearch.js "Craft Projects"
@@ -42,7 +42,7 @@ Ex below:
 
  ### Hey! where did the rest of your logic go? did you make a deal with the robot devil?
 
- Nope, after breaking down the functions and getting some tests to run I decided to try and do some additional cleanup, I was unable to get all the functions seperated into smaller files but I was able to extract the API call and keep the test working. SO, youl can find the remainder of the logic inside the `BookSearch.js` file now living in my `src` file with the rest of the logic.
+ Nope, after breaking down the functions and getting some tests to run I decided to try and do some additional cleanup, I was unable to get all the functions seperated into smaller files but, I was able to extract the API call and keep the test working. You will find the remainder of the logic inside the `BookSearch.js` file now living in my `src` file with the rest of the logic.
 
 
 ### This looks pretty good, but what happens if I want to be a troll and break the code?

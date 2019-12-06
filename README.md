@@ -1,14 +1,15 @@
 # Reading_list
 
 Hello again, and welcome back to my code. Thank you again for your helpful feedback the first time and for reviewing my refactored code. Most of the information in the readMe has not changed. However, I have included a few new things to assist in the understanding of the app as well as my latest process. Also, there will be a test at the end. Ready? Let's do this!
+(quick note: I included some example images which will show up if you open in preview.)
  
  
  ### How do I use it
 
 You can easily clone this from the repo and test it in your favorite text editor by typing `git clone` and pasting the repo into your terminal.
 
-Once you have the repo cloned type in your terminal `npm install` Once that is installed right click the file `MainApp.js ` and open it in theterminal then type 
-`node MainApp.js` then type in a desired book title, genre or topic surrounded by quotation marks (this helps creates a more efficiant search for the API).
+Once you have the repo cloned type in your terminal `npm install` Once that is installed right click the file `MainApp.js ` and open it in the terminal then type 
+`node MainApp.js` a desired book title, genre or topic surrounded by quotation marks (this helps creates a more efficiant search for the API).
 ### Ex:
 ```
 node BookSearch.js "Craft Projects"
@@ -23,7 +24,8 @@ A table will then display five books including the following api informaion
 
  ![CLI Reading list table](./src/readMeImg/readinglist.PNG)
 
-After that the user is asked to choose a book from the readling list like in the example below:
+After that the user is asked to choose a book from the readling list.
+Ex below:
 
 
 
@@ -31,7 +33,9 @@ After that the user is asked to choose a book from the readling list like in the
 
 If none of the books tickle their fancy they can press Ctrl C to start over.
 
-If they do find one they just select from the array given to them and then it is saved inside their reading list ex below:
+If they do find one they just select from the array given to them and then it is saved inside their reading list 
+
+Ex below:
 
 
  ![CLI Reading list selector](./src/readMeImg/jsonReadList.png)
@@ -47,7 +51,7 @@ If they do find one they just select from the array given to them and then it is
  
  ![CLI error message pic example](./src/readMeImg/NewError.PNG)
 
-This message will also appear if nothing is typed. I did not include numbers because when I ran the app and searched with numbers many books came up and I did not want to make my search requirements too strict right now. 
+The error message will also appear if nothing is typed. I did not include numbers because when I ran the app and searched with numbers many books came up and I did not want to make my search requirements too strict right now. 
 
 ### Running the tests
 My tests are passing Wooohooo! I realized that my original attempt was geared more toward React components and I did not need to make so many separate files.
@@ -61,9 +65,9 @@ My tests are passing Wooohooo! I realized that my original attempt was geared mo
 This app was created for the busy coder who loves to read. Now they can simply search for a book within the comfort of their own terminal. 
 
 ### What was my process for doing the things I did THIS TIME AROUND?
-  Coding can be like building a house of cards sometimes, one wrong step and it can feel like it's all falling apart. I decided that regardless of the outcome I would code without fear and not let the idea of failure paralyze me from move beyond an MVP.
- I set my focus first on refactoring what was asked of me and then trying to go beyond that and see what happened. I tried a few things like extracting the functions and putting them inside their own files in the src but I had trouble figuring out how to rewrite my tests and wanted to include passing tests in this sprint. Also, my first attempt at creating a special character parameters failed and currently as I write this I am still trying to get it to work without typing a double error message. On the plus side, some of the things I tried DID WORK which is great
-
+ Coding can be like building a house of cards sometimes, one wrong step and it can feel like it's all falling apart. I decided that regardless of the outcome I would code without fear and not let the idea of failure paralyze me from move beyond an MVP.
+ I set my focus first on refactoring what was asked of me and then trying to go beyond that and see what happened. 
+In the end, I was happy to have examples of an extra search parameter and got a chance to practice extracting a file from the code and have it pass it's test and run.
 
 * I chose javascript becasue it is the language I feel most comfortble in right now. 
 
@@ -78,7 +82,7 @@ This app was created for the busy coder who loves to read. Now they can simply s
 
 ### What is next
 
-*If I didnt get time to do it, breaking up the various functionality and seperating them into different js files that would live inside the SRC file and export them into the BookSearch file to make the code cleaner and easier to make changes to.
+*If I didnt get time to do it, breaking up the remaiing functions in BookSearch.js and seperating them into different js files that would live inside the SRC file and export them into the MainApp.js file to make the code cleaner and easier to make changes to.
 
 ### Nice to haves
 

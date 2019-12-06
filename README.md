@@ -1,8 +1,9 @@
 # Reading_list
 
- Hello, and welcome to my code. Whomever has the task of reviewing my code, thank you in advance for your helpful feedback. This experience was quiet a journey for me as I got to dip my toe into some new practices and learn a lot in the process. Testing is a new pratice for me but one I want to continue to grow in. Btw, that shirt looks great on you, is it new? Okay here we go!!!!
-
-### How do I use it
+Hello again, and welcome back to my code. Thank you again for your helpful feedback the first time and for reviewing my refactored code. Most of the information in the readMe has not changed. However, I have included a few new things to assist in the understanding of the app as well as my latest process. Also, there will be a test at the end. Ready? Let's do this!
+ 
+ 
+ ### How do I use it
 
 You can easily clone this from the repo and test it in your favorite text editor by typing `git clone` and pasting the repo into your terminal.
 
@@ -27,19 +28,27 @@ If none of the books tickle their fancy they can press Ctrl C to start over.
 If they do find one they just select from the array given to them and then it is saved inside their reading list.
 
 ### What if I want to be a troll and break the code?
- Glad you asked! I created a new function called containsSpecialCharacters which uses regex or Regular Expression to assist in weeding out unwanted characters in the string search. As far as my research goes no book starts with *!%{#@ so, I added in a special characters array that, if entered would return a helpful error message asking the user to please enter in a genre, title, or topic of a book instead. This message will also will appear if nothing is typed. I did not include numbers becasue apon testing many books came up with in the search with numerical names and I did not want to make my search requirements too strict right now. 
+ Glad you asked! I created a new function called containsSpecialCharacters which includes an array of characters such as 
+ "{[%$#" that might accidentally get typed by the user or their mischevious cat sitting on the keyboard. If any of the characters inside the list were to be entered a helpful error message like the one featured in the image below will pop up. 
+ ![CLI error message pic example](./src/error.PNG)
+
+This message will also appear if nothing is typed. I did not include numbers because when I ran the app and searched with numbers many books came up and I did not want to make my search requirements too strict right now. 
 
 ### Running the tests
-My tests are passing Wooohooo! I realized that my original attempt was geared more toward React components and I did not need to make so many seperate files.
+My tests are passing Wooohooo! I realized that my original attempt was geared more toward React components and I did not need to make so many separate files.
+
 ### To run the tests go to the terminal and type 
-`npm run test`
+`npm test`
 
 
 ### Who is this app for?
 
 This app was created for the busy coder who loves to read. Now they can simply search for a book within the comfort of their own terminal. 
 
-### What was my process for doing the things I did?
+### What was my process for doing the things I did THIS TIME AROUND?
+  Coding can be like building a house of cards sometimes, one wrong step and it can feel like it's all falling apart. I decided that regardless of the outcome I would code without fear and not let the idea of failure paralyze me from move beyond an MVP.
+ I set my focus first on refactoring what was asked of me and then trying to go beyond that and see what happened. I tried a few things like extracting the functions and putting them inside their own files in the src but I had trouble figuring out how to rewrite my tests and wanted to include passing tests in this sprint. Also, my first attempt at creating a special character parameters failed and currently as I write this I am still trying to get it to work without typing a double error message. On the plus side, some of the things I tried DID WORK which is great
+
 
 * I chose javascript becasue it is the language I feel most comfortble in right now. 
 
@@ -51,13 +60,10 @@ This app was created for the busy coder who loves to read. Now they can simply s
 
 * I added inquirer as a way to add to the UX as it just seems nicer to be kindly prompted within the app as appose to go to the readme file to figure out how to do everything
 
-* I spent some extra time reading documentation and trying to apply tests since I want to apply best practices to my code. I was able to write working tests when I broke the code into smaller functions but, then I was faced with the dilema of my readinglist not saving properly. In the end I chose to go back to my async code to present a working prduct and hope that next round I can do figure out the solution that was holding me back this round.
 
 ### What is next
 
-* Add an additional prompt telling the user to type in a keyword for their book search
-
-* Create edge cases to test this new prompt
+*If I didnt get time to do it, breaking up the various functionality and seperating them into different js files that would live inside the SRC file and export them into the BookSearch file to make the code cleaner and easier to make changes to.
 
 ### Nice to haves
 
@@ -65,7 +71,7 @@ This app was created for the busy coder who loves to read. Now they can simply s
 
 * To toggle within the book list and make a selection within the table instead of in a seperate array
 
-* One of those love sac things, have you ever sat in one? they are super comfortable.
+* Relying on less dependencies in the future.
 
 
 ### A big thank you to the following dependencies:
@@ -101,6 +107,15 @@ This app was created for the busy coder who loves to read. Now they can simply s
 
 ### -Sara :)
 
+### Here is the test btw. I hope you were paying attention.
+
+ Which undersea animal can deliver a punch that is equivalent to a 22 caliber bullet? 
+ 
+ * Mermaid Mike Tyson
+
+ * Mantis Shrimp
+
+ * Punchy, the only whale with arms.
 
 
 

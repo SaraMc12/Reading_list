@@ -40,7 +40,6 @@ const containsSpecialCharacters =(str)=>{
 return (str);
 }
 
-
 if (containsSpecialCharacters(userSearchParamaters)===false){
 callAPI();
 }else{

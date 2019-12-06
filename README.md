@@ -30,6 +30,8 @@ If they do find one they just select from the array given to them and then it is
 ### What if I want to be a troll and break the code?
  Glad you asked! I created a new function called containsSpecialCharacters which includes an array of characters such as 
  "{[%$#" that might accidentally get typed by the user or their mischevious cat sitting on the keyboard. If any of the characters inside the list were to be entered a helpful error message like the one featured in the image below will pop up. 
+ *
+ 
  ![CLI error message pic example](./src/error.PNG)
 
 This message will also appear if nothing is typed. I did not include numbers because when I ran the app and searched with numbers many books came up and I did not want to make my search requirements too strict right now. 

@@ -33,7 +33,7 @@ const ApiErrorHandler = () => {
   console.log("error, please type in the name, genre or topic of a book");
 };
 
-const containsSpecialCharacters = str => {
+const ApiSearchParamFilter = str => {
   var regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
   return regex.test(str);
 };
@@ -117,4 +117,4 @@ module.exports.getAPICall = getAPICall;
 module.exports.callAPI = callAPI;
 module.exports.ApiErrorHandler = ApiErrorHandler;
 module.exports.top5Results = top5Results;
-module.exports.containsSpecialCharacters = containsSpecialCharacters;
+module.exports.ApiSearchParamFilter = ApiSearchParamFilter;

@@ -7,13 +7,13 @@ Hello again, and welcome back to my code. Thank you again for your helpful feedb
 
 You can easily clone this from the repo and test it in your favorite text editor by typing `git clone` and pasting the repo into your terminal.
 
-Once you have the repo cloned type in your terminal `npm install` Once that is installed right click the file `BookSearch.js ` and open it in theterminal then type 
-`node BookSearch` and then type in a desired book title, topic or genre.
+Once you have the repo cloned type in your terminal `npm install` Once that is installed right click the file `MainApp.js ` and open it in theterminal then type 
+`node MainApp.js` then type in a desired book title, genre or topic surrounded by quotation marks (this helps creates a more efficiant search for the API).
 ### Ex:
 ```
-node BookSearch.js Rabbit Care
-node BookSearch.js Moby Dick
-node BookSearch.js Romantic Slasher 
+node BookSearch.js "Craft Projects"
+node BookSearch.js "Calvin and Hobbes"
+node BookSearch.js "Humor" 
 ```
 A table will then display five books including the following api informaion
 
@@ -21,18 +21,31 @@ A table will then display five books including the following api informaion
 * Author
 * Publisher
 
-After that the user is asked to choose a book from the readling list.
+ ![CLI Reading list table](./src/readMeImg/readinglist.PNG)
+
+After that the user is asked to choose a book from the readling list like in the example below:
+
+
+
+ ![CLI Reading list selector](./src/readMeImg/readlistSelect.png)
 
 If none of the books tickle their fancy they can press Ctrl C to start over.
 
-If they do find one they just select from the array given to them and then it is saved inside their reading list.
+If they do find one they just select from the array given to them and then it is saved inside their reading list ex below:
 
-### What if I want to be a troll and break the code?
- Glad you asked! I created a new function called containsSpecialCharacters which includes an array of characters such as 
- "{[%$#" that might accidentally get typed by the user or their mischevious cat sitting on the keyboard. If any of the characters inside the list were to be entered a helpful error message like the one featured in the image below will pop up. 
+
+ ![CLI Reading list selector](./src/readMeImg/jsonReadList.png)
+
+ ### Hey! where did the rest of your logic go? did you make a deal with the robot devil?
+
+ Nope, after breaking down the functions and getting some tests to run I decided to try and do some additional cleanup, I was unable to get all the functions seperated into smaller files but I was able to extract the API call and keep the test working. SO, youl can find the remainder of the logic inside the `BookSearch.js` file now living in my `src` file with the rest of the logic.
+
+
+### This looks pretty good, but what happens if I want to be a troll and break the code?
+ Glad you asked! I created a new function using Regex called ApiSearchParamFilter which includes an array of characters such as "{[%$#" that might accidentally get typed by the user or their mischevious cat sitting on the keyboard. If any of the characters inside the list were to be entered a helpful error message like the one featured in the image below will pop up. Originally I had a few issues with this function but after deleting the space option from the special character array and including " " in the reqirements for the user search I got this search param to do what I wanted it to do yaaaay!
  *
  
- ![CLI error message pic example](./src/error.PNG)
+ ![CLI error message pic example](./src/readMeImg/NewError.PNG)
 
 This message will also appear if nothing is typed. I did not include numbers because when I ran the app and searched with numbers many books came up and I did not want to make my search requirements too strict right now. 
 
@@ -98,13 +111,13 @@ This app was created for the busy coder who loves to read. Now they can simply s
 
 * all the documentation
 
-* npm packages
+* npm packages (quick note, the npm package inquirer, as of now has a small bug in it making "message:" unable to work, so for the time being I have created a console.log to log the message "what book do you want to add to the reading list" I felt that was an important part of the UX and wanted to keep it in.)
 
 * Github
 
 * My human and non human support system.
 
-### Thank you to whomever is reading this ReadMe file. I figured I would try and add a bit of fun as you probably have to read a lot of these over the next few weeks. 
+### Thank you again for reading this ReadMe file. Since I had to make some updates I tried to keep it on the amusing side for you as well. 
 ### Looking forward to your feedback
 
 ### -Sara :)

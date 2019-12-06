@@ -1,7 +1,6 @@
 const APICall = require("../src/BooksSearch").getAPICall;
 const top5Results = require("../src/BooksSearch").top5Results;
-const ApiSearchParamFilter = require("../src/BooksSearch")
-  .ApiSearchParamFilter;
+const ApiSearchParamFilter = require("../src/BooksSearch").ApiSearchParamFilter;
 
 describe("APICall", () => {
   it("should return the correct URL", () => {

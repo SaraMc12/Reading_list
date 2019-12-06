@@ -2,7 +2,6 @@
 
 const fs = require("fs");
 const axios = require("axios");
-let userSearchParamaters = process.argv.splice(2).join(" ");
 let queryURL;
 const cTable = require("console.table");
 const inquirer = require("inquirer");
@@ -15,7 +14,7 @@ const getAPICall = userSearchParamaters => {
   return queryURL;
 };
 
-const callAPI = () => {
+const callAPI = userSearchParamaters => {
   axios
     .get(getAPICall(userSearchParamaters))
     .then(APISuccsessHandler, ApiErrorHandler);
@@ -38,16 +37,6 @@ const containsSpecialCharacters = str => {
   var regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
   return regex.test(str);
 };
-
-if (containsSpecialCharacters(userSearchParamaters) === false) {
-  console.log("entered");
-  callAPI();
-} else {
-  console.log("failed");
-  ApiErrorHandler();
-}
-
-// callAPI();
 
 // LOAD API RESULTS TO CONSOLETABLE
 
@@ -125,5 +114,7 @@ let bookChoices;
 
 // this is for testing
 module.exports.getAPICall = getAPICall;
+module.exports.callAPI = callAPI;
+module.exports.ApiErrorHandler = ApiErrorHandler;
 module.exports.top5Results = top5Results;
 module.exports.containsSpecialCharacters = containsSpecialCharacters;

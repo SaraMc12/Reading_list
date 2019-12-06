@@ -1,6 +1,6 @@
 const APICall = require('../BooksSearch').getAPICall;
 const top5Results = require('../BooksSearch').top5Results;
-const specialCharacters = require('../BooksSearch').containSpecialCharacters
+const containsSpecialCharacters = require('../BooksSearch').containsSpecialCharacters;
 
 describe('APICall', ()=>{
     it("should return the correct URL", ()=>{
@@ -29,12 +29,11 @@ describe('top5Results', ()=>{
     });
 });
 
-describe('specialCharacters', ()=>{
+describe('containsSpecialCharacters', ()=>{
     it('should return an error message if characters used from special list are used', ()=>{
-      const result =specialCharacters.containSpecialCharacters(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g);
-      expect(result).tobe("humor");
-      
-});
+       expect(containsSpecialCharacters("humor")).toBeFalsy();
+      expect(containsSpecialCharacters("&$")).toBeTruthy();
+    });
 
 });
 
